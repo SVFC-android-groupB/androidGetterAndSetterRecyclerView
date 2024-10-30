@@ -7,34 +7,34 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.androidrecyclerviewadpater.model.productModel;
 
 import com.example.androidrecyclerviewadpater.R;
+import com.example.androidrecyclerviewadpater.model.ProductModel;
 
 import java.util.List;
 
-public class productAdapter extends RecyclerView.Adapter<productAdapter.productViewHolder> {
+public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.productViewHolder> {
 
-    List<productModel> productModelList;
+    List<ProductModel> productModelList;
 
-    public productAdapter(List<productModel> productModelList){
+    public ProductAdapter(List<ProductModel> productModelList){
         this.productModelList = productModelList;
     }
 
     @NonNull
     @Override
-    public productAdapter.productViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ProductAdapter.productViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_product_card, parent, false);
         return new productViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull productAdapter.productViewHolder holder, int position) {
-         productModel productModel = productModelList.get(position);
-         holder.productName.setText(productModel.getName());
-         holder.category.setText(productModel.getCategory());
-         holder.price.setText(productModel.getPrice());
+    public void onBindViewHolder(@NonNull ProductAdapter.productViewHolder holder, int position) {
+        ProductModel productModel = productModelList.get(position);
+        holder.productName.setText(productModel.getName());
+        holder.category.setText(productModel.getCategory());
+        holder.price.setText(String.valueOf(productModel.getPrice()));
     }
 
     @Override

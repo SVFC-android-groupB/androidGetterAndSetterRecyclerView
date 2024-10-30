@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.androidrecyclerviewadpater.adapter.productAdapter;
-import com.example.androidrecyclerviewadpater.model.productModel;
+import com.example.androidrecyclerviewadpater.adapter.ProductAdapter;
+import com.example.androidrecyclerviewadpater.model.ProductModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +15,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView rvMain;
-    List<productModel> productModelList = new ArrayList<>();
-    productAdapter productAdpater;
+    List<ProductModel> productModelList = new ArrayList<>();
+    ProductAdapter productAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +25,22 @@ public class MainActivity extends AppCompatActivity {
 
         rvMain = findViewById(R.id.rv_main);
 
-        productModelList.add(new productModel(1, "phone", "electronics", 5000));
-        productModelList.add(new productModel(2, "vivo phone", "electronics", 5500));
-        productModelList.add(new productModel(3, "laptop", "electronics", 55000));
-        productModelList.add(new productModel(4, "vivo case", "accesories", 50));
-        productModelList.add(new productModel(5, "charger", "electronics", 1000));
-        productModelList.add(new productModel(6, "tablet", "electronics", 7000));
+        productModelList.add(new ProductModel(1, "phone", "electronics", 5000));
+        productModelList.add(new ProductModel(2, "vivo phone", "electronics", 5500));
+        productModelList.add(new ProductModel(3, "laptop", "electronics", 55000));
+        productModelList.add(new ProductModel(4, "vivo case", "accesories", 50));
+        productModelList.add(new ProductModel(5, "charger", "electronics", 1000));
+        productModelList.add(new ProductModel(6, "tablet", "electronics", 7000));
+        productModelList.add(new ProductModel(7, "oppo phone", "electronics", 7000));
+        productModelList.add(new ProductModel(8, "ipad", "electronics", 9000));
+        productModelList.add(new ProductModel(9, "realme phone", "electronics", 4000));
+        productModelList.add(new ProductModel(10, "honor phone", "electronics", 7000));
+        productModelList.add(new ProductModel(11, "iphone", "electronics", 71000));
+        productModelList.add(new ProductModel(12, "tablet", "electronics", 7000));
 
-        productAdpater = new productAdapter(productModelList);
+        productAdapter = new ProductAdapter(productModelList);
 
-        rvMain.setAdapter(productAdpater);
+        rvMain.setAdapter(productAdapter);
         rvMain.setLayoutManager(new LinearLayoutManager(this));
     }
 }

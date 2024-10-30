@@ -1,12 +1,12 @@
 package com.example.androidrecyclerviewadpater.model;
 
-public class productModel {
+public class ProductModel {
     private int id;
     private String name;
     private String category;
     private int price;
 
-    public productModel(int id, String name, String category, int price) {
+    public ProductModel(int id, String name, String category, int price) {
         this.id = id;
         this.name = name;
         this.category = category;
